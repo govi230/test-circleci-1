@@ -4,6 +4,7 @@ jobs:
     docker:
       - image: python:latest
     steps:
+      - checkout
       - run: python3 main.py
 workflows:
   build_test:
