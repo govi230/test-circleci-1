@@ -8,10 +8,10 @@ jobs:
           name: Create Postman Collection Report
           command: |
             npm install -g newman newman-reporter-htmlextra
-            newman run https://www.getpostman.com/collections/eb329dc9b72aa84c6fca -r cli,htmlextra --reporter-htmlextra-export collection-health-report.html
+            newman run https://www.getpostman.com/collections/eb329dc9b72aa84c6fca -r cli,htmlextra --reporter-htmlextra-export collection-report.html
           when: always
       - store_artifacts:
-          path: collection-health-report.html
+          path: collection-report.html
 workflows:
   build_test:
     jobs:
