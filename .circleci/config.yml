@@ -17,11 +17,9 @@ jobs:
           path: collection-report.html
 workflows:
   Postman_Collection_Test:
-    triggers:
-      - schedule:
+    jobs:
+      - Postman_Collection:
           filters:
             branches:
               only:
                 - master
-    jobs:
-      - Postman_Collection
