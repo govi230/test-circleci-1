@@ -2,10 +2,14 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: python:latest
+      - image: node:latest
     steps:
-      - checkout
-      - run: python3 main.py
+      - run:
+          name: Create Postman Collection Report
+          command: |
+            npm install -g newman newman-reporter-htmlextra
+            newman run https://www.getpostman.com/collections/eb329dc9b72aa84c6fca -r cli,htmlextra --reporter-htmlextra-export collection-health-report.html
+          when: always
 workflows:
   build_test:
     jobs:
