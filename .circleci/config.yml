@@ -3,6 +3,7 @@ jobs:
   Postman_Collection:
     docker:
       - image: node:latest
+    resource_class: small
     steps:
       - run:
           name: Create Postman Collection Report
