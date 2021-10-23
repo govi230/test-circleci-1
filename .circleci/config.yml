@@ -19,8 +19,9 @@ workflows:
   Postman_Collection_Test:
     triggers:
       - schedule:
-          branches:
-            only:
-              - master
+          filters:
+            branches:
+              only:
+                - master
     jobs:
       - Postman_Collection
