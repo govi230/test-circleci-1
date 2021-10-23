@@ -10,7 +10,7 @@ jobs:
             npm install -g newman newman-reporter-htmlextra
             newman run https://www.getpostman.com/collections/eb329dc9b72aa84c6fca -r cli,htmlextra --reporter-htmlextra-export collection-health-report.html
           when: always
-        store_artifacts:
+      - store_artifacts:
           path: collection-health-report.html
 workflows:
   build_test:
