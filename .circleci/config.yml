@@ -16,6 +16,11 @@ jobs:
       - store_test_results:
           path: collection-report.html
 workflows:
-  build_test:
+  Postman_Collection_Test:
+    triggers:
+      - schedule:
+          branches:
+            only:
+              - master
     jobs:
       - Postman_Collection
