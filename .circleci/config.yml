@@ -12,6 +12,8 @@ jobs:
           when: always
       - store_artifacts:
           path: collection-report.html
+      - store_test_results:
+          path: collection-report.html
 workflows:
   build_test:
     jobs:
